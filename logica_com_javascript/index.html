@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Lógica com Javascript</title>
+	<link rel="stylesheet" href="style.css">
+	<script src="dayone_js/dayone_instructions.js"></script>
+	<script src="dayone_js/dayone_solving.js"></script>
+	<script src="dayone_js/dayone_userexperience.js"></script>
+</head>
+
+<body>
+	<header>
+		<div class="header-row">
+			<div class="title_tab">
+				<h1>7 Days Of Code</h1>
+				<h1>Lógica com Javascript</h1>
+			</div>
+			<button id="theme-toggle" type="button">Modo Claro</button>
+		</div>
+		<nav>
+			<a href="#dayone">Dia 1</a>
+			<a href="#">Dia 2</a>
+			<a href="#">Dia 3</a>
+			<a href="#">Dia 4</a>
+			<a href="#">Dia 5</a>
+			<a href="#">Dia 6</a>
+			<a href="#">Dia 7</a>
+		</nav>
+	</header>
+
+	<main>
+		<section id="dayone">
+			<section class="instructions_sec">
+				<div class="challenge_tab">
+					<h2>Dia 1</h2>
+					<h3>Resolver problema com tipos de váriaveis quando comparar valor</h3>
+				</div>
+				<div class="explication_tab">
+					<h3>Para este desafio, nos foi dado as seguintes variáveis:</h3>
+					<p>let numeroUm = 1</p>
+					<p>let stringUm = '1'</p>
+					<p>let numeroTrinta = 30</p>
+					<p>let stringTrinta = '30'</p>
+					<p>let numeroDez = 10</p>
+					<p>let stringDez = '10'</p>
+					<h3>Nossa tarefa é comparar os valores das variáveis e identificar quais são iguais e quais são diferentes,
+						considerando seus tipos.</h3>
+				</div>
+				<div class="instruction_tab">
+					<p>Caso queira, você pode clicar no botão ao lado para ver a instrução completa</p>
+					<button onclick="dayone_instructions_run()">Ver Instrução</button>
+				</div>
+			</section>
+			<section class="solution_sec">
+				<div class="title_tab">
+					<h1>Solução</h1>
+				</div>
+				<div class="solution_tab">
+					<p>Para resolver este desafio, precisamos comparar as variáveis fornecidas considerando tanto o valor quanto o tipo de dado.</p>
+					<p>Em JavaScript, utilizamos dois operadores principais para comparações:</p>
+					<ul>
+						<li><strong>== (igualdade solta):</strong> Compara apenas o valor, ignorando o tipo.</li>
+						<li><strong>=== (igualdade estrita):</strong> Compara valor e tipo simultaneamente.</li>
+					</ul>
+					<p>Analisando as variáveis:</p>
+					<ul>
+						<li><code>numeroUm = 1</code> (número)</li>
+						<li><code>stringUm = '1'</code> (string)</li>
+						<li><code>numeroTrinta = 30</code> (número)</li>
+						<li><code>stringTrinta = '30'</code> (string)</li>
+						<li><code>numeroDez = 10</code> (número)</li>
+						<li><code>stringDez = '10'</code> (string)</li>
+					</ul>
+					<p>Comparações de igualdade solta (==):</p>
+					<ul>
+						<li><code>numeroUm == stringUm</code> → true (valor igual, tipos diferentes)</li>
+						<li><code>numeroTrinta == stringTrinta</code> → true</li>
+						<li><code>numeroDez == stringDez</code> → true</li>
+					</ul>
+					<p>Comparações de igualdade estrita (===):</p>
+					<ul>
+						<li><code>numeroUm === stringUm</code> → false (tipos diferentes)</li>
+						<li><code>numeroTrinta === stringTrinta</code> → false</li>
+						<li><code>numeroDez === stringDez</code> → false</li>
+					</ul>
+					<p>Para identificar se são iguais ou diferentes, use === para verificar ambos os aspectos.</p>
+				</div>
+				<div class="result_tab">
+					<p>Agora que você interpretou como funciona, você pode clicar no botão para rodar o programa e receber o
+						resultado:</p>
+					<button onclick="dayone_solving_run()">Ver Resultado</button>
+				</div>
+				<div class="answer_tab">
+					<h6 id="answer_dayone_returned"></h6>
+				</div>
+			</section>
+			<section class="user_interation_sec">
+				<div class="user_input_tab">
+					<h3>Teste você também!</h3>
+					<h3>Insira dois valores para comparar!</h3>
+					<h3>Podendo conter aspas duplas, aspas simples ou sem aspas</h3>
+					<h3>Podendo ser números ou strings</h3>
+					<div>
+						<label for="dayone_entrance_one">Entrada 1:</label>
+						<input type="text" id="dayone_entrance_one">
+					</div>
+					<div>
+						<label for="dayone_entrance_two">Entrada 2:</label>
+						<input type="text" id="dayone_entrance_two">
+					</div>
+					<button onclick="dayone_userexperience_run()">Comparar Valores</button>
+				</div>
+				<div class="user_experience_result_tab">
+					<h6 id="user_experience_result"></h6>
+				</div>
+			</section>
+		</section>
+	</main>
+	<script src="ui_behaviors.js"></script>
+</body>
+
+</html>
