@@ -4,6 +4,8 @@ document.addEventListener('DOMContentLoaded', () => {
     const backToTop = document.createElement('button');
     const themeStorageKey = 'pageTheme';
     let lastScrollY = window.pageYOffset;
+    let scrollAccumulator = 0;
+    const SCROLL_THRESHOLD = 20;
 
     backToTop.id = 'back-to-top';
     backToTop.type = 'button';
@@ -24,14 +26,19 @@ document.addEventListener('DOMContentLoaded', () => {
 
     function handleScroll() {
         const currentScrollY = window.pageYOffset;
+        const delta = currentScrollY - lastScrollY;
+        scrollAccumulator += delta;
 
-        if (currentScrollY > lastScrollY && currentScrollY > 150) {
-            header.classList.add('hidden');
-        } else {
-            header.classList.remove('hidden');
+        if (Math.abs(scrollAccumulator) >= SCROLL_THRESHOLD) {
+            if (delta > 0 && currentScrollY > 140) {
+                header.classList.add('hidden');
+            } else if (delta < 0) {
+                header.classList.remove('hidden');
+            }
+            scrollAccumulator = 0;
         }
 
-        if (currentScrollY > 400) {
+        if (currentScrollY > 350) {
             backToTop.classList.add('visible');
         } else {
             backToTop.classList.remove('visible');
