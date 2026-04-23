@@ -1,0 +1,631 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Lógica com Javascript</title>
+	<link rel="stylesheet" href="style.css">
+	<script src="dayone_js/dayone_instructions.js"></script>
+	<script src="dayone_js/dayone_solving.js"></script>
+	<script src="dayone_js/dayone_userexperience.js"></script>
+	<script src="daytwo_js/daytwo_instructions.js"></script>
+	<script src="daytwo_js/daytwo_userexperience.js"></script>
+	<script src="daythree_js/daythree_instructions.js"></script>
+	<script src="daythree_js/daythree_userexperience.js"></script>
+	<script src="dayfour_js/dayfour_instructions.js"></script>
+	<script src="dayfour_js/dayfour_solving.js"></script>
+	<script src="dayfour_js/dayfour_example.js"></script>
+	<script src="dayfour_js/dayfour_userexperience.js"></script>
+	<script src="dayfour_js/dayfour_hints.js"></script>
+	<script src="dayfive_js/dayfive_instructions.js"></script>
+	<script src="dayfive_js/dayfive_solving.js"></script>
+	<script src="dayfive_js/dayfive_userexperience.js"></script>
+	<script src="daysix_js/daysix_instructions.js"></script>
+	<script src="daysix_js/daysix_solving.js"></script>
+	<script src="daysix_js/daysix_userexperience.js"></script>
+	<script src="dayseven_js/dayseven_instructions.js"></script>
+	<script src="dayseven_js/dayseven_solving.js"></script>
+	<script src="dayseven_js/dayseven_userexperience.js"></script>
+</head>
+
+<body>
+	<header>
+		<div class="header-row">
+			<div class="title_tab">
+				<h1>7 Days Of Code</h1>
+				<h1>Lógica com Javascript</h1>
+			</div>
+			<button id="theme-toggle" type="button">Modo Claro</button>
+		</div>
+		<nav>
+			<a href="#dayone">Dia 1</a>
+			<a href="#daytwo">Dia 2</a>
+			<a href="#daythree">Dia 3</a>
+			<a href="#dayfour">Dia 4</a>
+			<a href="#dayfive">Dia 5</a>
+			<a href="#daysix">Dia 6</a>
+			<a href="#dayseven">Dia 7</a>
+		</nav>
+	</header>
+	
+	<main>
+		<section id="dayone">
+			<section class="instructions_sec">
+				<div class="challenge_tab">
+					<h2>Dia 1</h2>
+					<h3>Resolver problema com tipos de váriaveis quando comparar valor</h3>
+				</div>
+				<div class="explication_tab">
+					<h3>Para este desafio, nos foi dado as seguintes variáveis:</h3>
+					<p>let numeroUm = 1</p>
+					<p>let stringUm = '1'</p>
+					<p>let numeroTrinta = 30</p>
+					<p>let stringTrinta = '30'</p>
+					<p>let numeroDez = 10</p>
+					<p>let stringDez = '10'</p>
+					<h3>Nossa tarefa é comparar os valores das variáveis e identificar quais são iguais e quais são diferentes,
+						considerando seus tipos.</h3>
+				</div>
+				<div class="instruction_tab">
+					<p>Caso queira, você pode clicar no botão ao lado para ver a instrução completa</p>
+					<br>
+					<button onclick="dayone_instructions_run()">Ver Instrução</button>
+				</div>
+			</section>
+			<section class="solution_sec">
+				<div class="title_tab">
+					<h1>Solução</h1>
+				</div>
+				<div class="solution_tab">
+					<p>Para resolver este desafio, precisamos comparar as variáveis fornecidas considerando tanto o valor quanto o tipo de dado.</p>
+					<p>Em JavaScript, utilizamos dois operadores principais para comparações:</p>
+					<ul>
+						<li><strong>== (igualdade solta):</strong> Compara apenas o valor, ignorando o tipo.</li>
+						<li><strong>=== (igualdade estrita):</strong> Compara valor e tipo simultaneamente.</li>
+					</ul>
+					<p>Analisando as variáveis:</p>
+					<ul>
+						<li><code>numeroUm = 1</code> (número)</li>
+						<li><code>stringUm = '1'</code> (string)</li>
+						<li><code>numeroTrinta = 30</code> (número)</li>
+						<li><code>stringTrinta = '30'</code> (string)</li>
+						<li><code>numeroDez = 10</code> (número)</li>
+						<li><code>stringDez = '10'</code> (string)</li>
+					</ul>
+					<p>Comparações de igualdade solta (==):</p>
+					<ul>
+						<li><code>numeroUm == stringUm</code> → true (valor igual, tipos diferentes)</li>
+						<li><code>numeroTrinta == stringTrinta</code> → true</li>
+						<li><code>numeroDez == stringDez</code> → true</li>
+					</ul>
+					<p>Comparações de igualdade estrita (===):</p>
+					<ul>
+						<li><code>numeroUm === stringUm</code> → false (tipos diferentes)</li>
+						<li><code>numeroTrinta === stringTrinta</code> → false</li>
+						<li><code>numeroDez === stringDez</code> → false</li>
+					</ul>
+					<p>Para identificar se são iguais ou diferentes, use === para verificar ambos os aspectos.</p>
+				</div>
+				<div class="result_tab">
+					<p>Agora que você interpretou como funciona, você pode clicar no botão para rodar o programa e receber o
+						resultado:</p>
+					<br>
+					<button onclick="dayone_solving_run()">Ver Resultado</button>
+				</div>
+				<div class="answer_tab">
+					<h6 id="answer_dayone_returned"></h6>
+				</div>
+			</section>
+			<section class="user_interation_sec">
+				<div class="user_input_tab">
+					<h3>Teste você também!</h3>
+					<h3>Insira dois valores para comparar!</h3>
+					<h3>Podendo conter aspas duplas, aspas simples ou sem aspas</h3>
+					<h3>Podendo ser números ou strings</h3>
+					<form onsubmit="event.preventDefault(); dayone_userexperience_run();">
+						<div>
+							<label for="dayone_entrance_one">Entrada 1:</label>
+							<input type="text" id="dayone_entrance_one" required>
+						</div>
+						<div>
+							<label for="dayone_entrance_two">Entrada 2:</label>
+							<input type="text" id="dayone_entrance_two" required>
+						</div>
+						<br>
+						<input type="submit" value="Comparar Valores">
+					</form>
+				</div>
+				<div class="user_experience_result_tab">
+					<h6 id="user_experience_result"></h6>
+				</div>
+			</section>
+		</section>
+		<section id="daytwo">
+			<section class="instructions_sec">
+				<div class="challenge_tab">
+					<h2>Dia 2</h2>
+					<h3>Capturar e armazenar valores em variáveis</h3>
+				</div>
+				<div class="explication_tab">
+					<h3>Para este desafio, você deve criar um programa que simule um cadastro personalizado, como em um site.</h3>
+					<p>O programa deve perguntar ao usuário 3 perguntas:</p>
+					<ul>
+						<li>Qual o seu nome?</li>
+						<li>Quantos anos você tem?</li>
+						<li>Qual linguagem de programação você está estudando?</li>
+					</ul>
+					<p>No final, exibir a mensagem: "Olá [nome], você tem [idade] anos e já está aprendendo [linguagem]!"</p>
+					<h3>Exercício opcional: Após exibir a mensagem, perguntar "Você gosta de estudar [linguagem]?" com botões SIM e NÃO, e mostrar uma resposta baseada na escolha.</h3>
+				</div>
+				<div class="instruction_tab">
+					<p>Caso queira, você pode clicar no botão ao lado para ver a instrução completa</p>
+					<br>
+					<button onclick="daytwo_instructions_run()">Ver Instrução</button>
+				</div>
+			</section>
+			<section class="solution_sec">
+				<div class="title_tab">
+					<h1>Solução</h1>
+				</div>
+				<div class="solution_tab">
+					<p>Para resolver este desafio, usamos variáveis para capturar e armazenar as respostas do usuário.</p>
+					<p>Em JavaScript, podemos usar <code>prompt()</code> para obter entrada do usuário:</p>
+					<pre><code>let nome = prompt("Qual o seu nome?");
+let idade = prompt("Quantos anos você tem?");
+let linguagem = prompt("Qual linguagem de programação você está estudando?");
+
+alert(`Olá ${nome}, você tem ${idade} anos e já está aprendendo ${linguagem}!`);</code></pre>
+					<p>As variáveis <code>nome</code>, <code>idade</code> e <code>linguagem</code> armazenam as respostas.</p>
+					<p>Para o exercício opcional, usamos <code>confirm()</code> para uma pergunta sim/não:</p>
+					<pre><code>let gosta = confirm(`Você gosta de estudar ${linguagem}?`);
+if (gosta) {
+    alert("Muito bom! Continue estudando e você terá muito sucesso.");
+} else {
+    alert("Ahh que pena... Já tentou aprender outras linguagens?");
+}</code></pre>
+					<p>Isso torna a experiência mais interativa e personalizada.</p>
+				</div>
+			</section>
+			<section class="user_interation_sec">
+				<div class="user_input_tab">
+					<h3>Teste você também!</h3>
+					<h3>Responda às perguntas para personalizar sua experiência:</h3>
+					<form onsubmit="event.preventDefault(); daytwo_userexperience_run();">
+						<div>
+							<label for="daytwo_nome">Qual o seu nome?</label>
+							<input type="text" id="daytwo_nome" required>
+						</div>
+						<div>
+							<label for="daytwo_idade">Quantos anos você tem?</label>
+							<input type="number" id="daytwo_idade" required>
+						</div>
+						<div>
+							<label for="daytwo_linguagem">Qual linguagem de programação você está estudando?</label>
+							<input type="text" id="daytwo_linguagem" required>
+						</div>
+						<br>
+						<input type="submit" value="Enviar">
+					</form>
+				</div>
+				<div class="user_experience_result_tab">
+					<h6 id="daytwo_result"></h6>
+				</div>
+				<div id="daytwo_optional" style="display: none;">
+					<h3 id="daytwo_optional_question">Você gosta de estudar [linguagem]?</h3>
+					<button onclick="daytwo_optional_sim()">SIM</button>
+					<button onclick="daytwo_optional_nao()">NÃO</button>
+					<h6 id="daytwo_optional_result"></h6>
+				</div>
+			</section>
+		</section>
+		<section id="daythree">
+			<section class="instructions_sec">
+				<div class="challenge_tab">
+					<h2>Dia 3</h2>
+					<h3>Decisões e Loops</h3>
+				</div>
+				<div class="explication_tab">
+					<h3>Para este desafio, você deve criar um jogo interativo onde o usuário faz escolhas sobre seu caminho na programação.</h3>
+					<p>O programa deve permitir ao usuário escolher entre Front-End ou Back-End, depois tecnologias específicas, especialização ou Fullstack, e finalmente listar tecnologias que deseja aprender.</p>
+					<p>Use estruturas de controle como if/else e loops para guiar o fluxo baseado nas escolhas.</p>
+				</div>
+				<div class="instruction_tab">
+					<p>Caso queira, você pode clicar no botão ao lado para ver a instrução completa</p>
+					<br>
+					<button onclick="daythree_instructions_run()">Ver Instrução</button>
+				</div>
+			</section>
+			<section class="solution_sec">
+				<div class="title_tab">
+					<h1>Solução</h1>
+				</div>
+				<div class="solution_tab">
+					<p>Para resolver este desafio, usamos estruturas de controle de fluxo como if/else para ramificações e loops while para coletar múltiplas tecnologias.</p>
+					<p>Exemplo de código:</p>
+					<pre><code>let area = prompt("Você quer seguir para área de Front-End ou Back-End?");
+if (area === "Front-End") {
+    let tech = prompt("Quer aprender React ou Vue?");
+    // ...
+} else if (area === "Back-End") {
+    let tech = prompt("Quer aprender C# ou Java?");
+    // ...
+}
+
+let especializar = prompt("Quer se especializar ou se tornar Fullstack?");
+if (especializar === "especializar") {
+    alert("Especialize-se na sua área!");
+} else {
+    alert("Torne-se Fullstack!");
+}
+
+let tecnologias = [];
+let continuar = "sim";
+while (continuar === "sim") {
+    let tech = prompt("Qual tecnologia gostaria de aprender?");
+    tecnologias.push(tech);
+    continuar = prompt("Tem mais alguma? (sim/não)");
+}
+alert("Tecnologias: " + tecnologias.join(", "));</code></pre>
+					<p>Isso cria um fluxo interativo baseado nas escolhas do usuário.</p>
+				</div>
+			</section>
+			<section class="user_interation_sec">
+				<div class="user_input_tab">
+					<h3>Teste você também!</h3>
+					<h3>Faça suas escolhas no jogo de programação:</h3>
+					<div id="daythree_game">
+						<div id="step1">
+							<label>Você quer seguir para área de Front-End ou Back-End?</label>
+							<select id="area_choice">
+								<option value="">Selecione</option>
+								<option value="Front-End">Front-End</option>
+								<option value="Back-End">Back-End</option>
+							</select>
+							<button onclick="nextStep(1)">Próximo</button>
+						</div>
+						<div id="step2" style="display: none;">
+							<label id="tech_label"></label>
+							<select id="tech_choice">
+								<option value="">Selecione</option>
+							</select>
+							<button onclick="nextStep(2)">Próximo</button>
+						</div>
+						<div id="step3" style="display: none;">
+							<label>Você quer seguir se especializando na área escolhida ou se desenvolvendo para se tornar Fullstack?</label>
+							<select id="special_choice">
+								<option value="">Selecione</option>
+								<option value="especializar">Especializar</option>
+								<option value="fullstack">Fullstack</option>
+							</select>
+							<button onclick="nextStep(3)">Próximo</button>
+						</div>
+						<div id="step4" style="display: none;">
+							<label>Quais tecnologias você gostaria de aprender? (uma de cada vez)</label>
+							<input type="text" id="tech_input" placeholder="Digite uma tecnologia">
+							<br>
+							<div style="display: flex; gap: 20px; align-items: center; margin-top: 10px;">
+								<button onclick="addTech()">Adicionar</button>
+								<button onclick="finishTech()">Finalizar</button>
+								<div id="retry_button" style="display: none;">
+									<button onclick="retryGame()">Tentar Novamente</button>
+								</div>
+							</div>
+							<ul id="tech_list"></ul>
+						</div>
+					</div>
+				</div>
+				<div class="user_experience_result_tab">
+					<h6 id="daythree_result"></h6>
+				</div>
+			</section>
+		</section>
+		<section id="dayfour">
+			<section class="instructions_sec">
+				<div class="challenge_tab">
+					<h2>Dia 4</h2>
+					<h3>Jogo de Adivinhação</h3>
+				</div>
+				<div class="explication_tab">
+					<h3>Para este desafio, você deve criar um jogo de adivinhação de número.</h3>
+					<p>O computador escolhe um número entre 0 e 10, e o usuário tem 3 tentativas para adivinhar.</p>
+					<p>Use loops e condicionais para controlar o jogo.</p>
+				</div>
+				<div class="instruction_tab">
+					<p>Caso queira, você pode clicar no botão ao lado para ver a instrução completa</p>
+					<br>
+					<button onclick="dayfour_instructions_run()">Ver Instrução</button>
+				</div>
+			</section>
+			<section class="user_interation_sec">
+				<div class="user_input_tab">
+					<h3>Interação: Exemplo com Número Fixo (7)</h3>
+					<p>Teste o exemplo com número fixo 7. Você tem 3 tentativas.</p>
+					<form onsubmit="event.preventDefault(); dayfour_example_guess();">
+						<label for="dayfour_example_input">Seu chute:</label>
+						<input type="number" id="dayfour_example_input" min="0" max="10" required>
+						<button type="submit" id="dayfour_example_submit_btn">Enviar</button>
+					</form>
+				</div>
+				<div class="user_experience_result_tab">
+					<h6 id="dayfour_example_result"></h6>
+				</div>
+			</section>
+			<section class="solution_sec">
+				<div class="title_tab">
+					<h1>Solução</h1>
+				</div>
+				<div class="solution_tab">
+					<p>Primeiro, exemplo com número fixo (7):</p>
+					<br>
+					<button onclick="dayfour_solving_run()">Executar Exemplo com 7</button>
+					<div id="dayfour_solving_result"></div>
+					<br>
+					<p>Agora, versão com número aleatório:</p>
+					<pre><code>let numeroSecreto = Math.floor(Math.random() * 11);
+let tentativas = 3;
+let acertou = false;
+
+while (tentativas > 0 && !acertou) {
+    let chute = parseInt(prompt("Adivinhe o número (0-10):"));
+    if (chute === numeroSecreto) {
+        alert("Parabéns! Você acertou!");
+        acertou = true;
+    } else {
+        tentativas--;
+        if (tentativas > 0) {
+            alert(`Errou! Você tem ${tentativas} tentativa(s) restante(s).`);
+        } else {
+            alert(`Você perdeu! O número era ${numeroSecreto}.`);
+        }
+    }
+}</code></pre>
+				</div>
+			</section>
+			<section class="user_interation_sec">
+				<div class="user_input_tab">
+					<h3>Teste você também! (Número Aleatório)</h3>
+					<p>Tente adivinhar o número secreto entre 0 e 10. Você tem 3 tentativas.</p>
+					<form onsubmit="event.preventDefault(); dayfour_guess();">
+						<label for="dayfour_guess_input">Seu chute:</label>
+						<input type="number" id="dayfour_guess_input" min="0" max="10" required>
+						<button type="submit" id="dayfour_submit_btn">Enviar</button>
+					</form>
+				</div>
+				<div class="user_experience_result_tab">
+					<h6 id="dayfour_result"></h6>
+				</div>
+			</section>
+			<section class="user_interation_sec">
+				<div class="user_input_tab">
+					<h3>Teste com Dicas! (Número Aleatório)</h3>
+					<p>Tente adivinhar o número secreto. Receberá dicas se errou.</p>
+					<form onsubmit="event.preventDefault(); dayfour_guess_hints();">
+						<label for="dayfour_hints_input">Seu chute:</label>
+						<input type="number" id="dayfour_hints_input" min="0" max="10" required>
+						<button type="submit" id="dayfour_hints_submit_btn">Enviar</button>
+					</form>
+				</div>
+				<div class="user_experience_result_tab">
+					<h6 id="dayfour_hints_result"></h6>
+				</div>
+			</section>
+		</section>
+		<section id="dayfive">
+			<section class="instructions_sec">
+				<div class="challenge_tab">
+					<h2>Dia 5</h2>
+					<h3>Lista de Compras</h3>
+				</div>
+				<div class="explication_tab">
+					<h3>Para este desafio, você deve criar uma lista de compras organizada por categorias.</h3>
+					<p>O programa perguntará se você quer adicionar uma comida à lista, e então pedirá o nome e a categoria.</p>
+					<p>No final, exibe a lista completa agrupada por categoria (frutas, laticínios, congelados, doces, etc).</p>
+					<p>Use arrays e objetos para armazenar e organizar os dados.</p>
+				</div>
+				<div class="instruction_tab">
+					<p>Caso queira, você pode clicar no botão ao lado para ver a instrução completa</p>
+					<br>
+					<button onclick="dayfive_instructions_run()">Ver Instrução</button>
+				</div>
+			</section>
+			<section class="solution_sec">
+				<div class="title_tab">
+					<h1>Solução</h1>
+				</div>
+				<div class="solution_tab">
+					<p>Exemplo com itens pré-definidos:</p>
+					<br>
+					<button onclick="dayfive_solving_run()">Executar Exemplo</button>
+					<div id="dayfive_solving_result"></div>
+					<br>
+					<p>Agora, versão com entrada do usuário:</p>
+					<pre><code>let shoppingList = {
+    'Frutas': [],
+    'Laticínios': [],
+    'Congelados': [],
+    'Doces': []
+};
+
+let continuar = true;
+while (continuar) {
+    let adicionar = confirm("Deseja adicionar uma comida?");
+    if (adicionar) {
+        let item = prompt("Qual comida?");
+        let categoria = prompt("Qual categoria?");
+        shoppingList[categoria].push(item);
+    } else {
+        continuar = false;
+    }
+}
+
+for (let categoria in shoppingList) {
+    console.log(categoria + ": " + shoppingList[categoria].join(", "));
+}</code></pre>
+				</div>
+			</section>
+			<section class="user_interation_sec">
+				<div class="user_input_tab">
+					<h3>Teste você também!</h3>
+					<p>Clique para começar a montar sua lista de compras:</p>
+					<br>
+					<button onclick="dayfive_addItem()">Começar</button>
+				</div>
+				<div class="user_experience_result_tab">
+					<div id="dayfive_result"></div>
+				</div>
+			</section>
+		</section>
+		<section id="daysix">
+			<section class="instructions_sec">
+				<div class="challenge_tab">
+					<h2>Dia 6</h2>
+					<h3>Lista de Compras com Remoção</h3>
+				</div>
+				<div class="explication_tab">
+					<h3>Para este desafio, você melhora o programa do Dia 5 adicionando a funcionalidade de remover itens!</h3>
+					<p>O programa perguntará se você quer adicionar ou remover uma comida da lista.</p>
+					<p>Se escolher remover, exibe os itens disponíveis e você escolhe qual remover.</p>
+					<p>Se o item não existir, mostra uma mensagem informando isso.</p>
+					<p>Use métodos de array como indexOf() e splice() para remover itens.</p>
+				</div>
+				<div class="instruction_tab">
+					<p>Caso queira, você pode clicar no botão ao lado para ver a instrução completa</p>
+					<br>
+					<button onclick="daysix_instructions_run()">Ver Instrução</button>
+				</div>
+			</section>
+			<section class="solution_sec">
+				<div class="title_tab">
+					<h1>Solução</h1>
+				</div>
+				<div class="solution_tab">
+					<p>Exemplo com adição e remoção:</p>
+					<br>
+					<button onclick="daysix_solving_run()">Executar Exemplo</button>
+					<div id="daysix_solving_result"></div>
+					<br>
+					<p>Agora, versão com entrada do usuário:</p>
+					<pre><code>let shoppingList = { /* ... */ };
+
+function adicionarItem(nome, categoria) {
+    shoppingList[categoria].push(nome);
+}
+
+function removerItem(nome) {
+    for (let categoria in shoppingList) {
+        let index = shoppingList[categoria].indexOf(nome);
+        if (index > -1) {
+            shoppingList[categoria].splice(index, 1);
+            return true;
+        }
+    }
+    return false;
+}
+
+while (true) {
+    let acao = prompt("Adicionar ou remover?");
+    if (acao === "adicionar") {
+        let item = prompt("Qual item?");
+        let cat = prompt("Qual categoria?");
+        adicionarItem(item, cat);
+    } else if (acao === "remover") {
+        let item = prompt("Qual item remover?");
+        if (!removerItem(item)) {
+            alert("Item não encontrado!");
+        }
+    }
+}</code></pre>
+				</div>
+			</section>
+			<section class="user_interation_sec">
+				<div class="user_input_tab">
+					<h3>Teste você também!</h3>
+					<p>Clique para começar a gerenciar sua lista de compras:</p>
+					<br>
+					<button onclick="daysix_reset()">Começar</button>
+				</div>
+				<div class="user_experience_result_tab">
+					<div id="daysix_result"></div>
+				</div>
+			</section>
+		</section>
+		<section id="dayseven">
+			<section class="instructions_sec">
+				<div class="challenge_tab">
+					<h2>Dia 7</h2>
+					<h3>Calculadora com Funções</h3>
+				</div>
+				<div class="explication_tab">
+					<h3>Para este desafio, você deve criar uma calculadora com operações em funções separadas.</h3>
+					<p>O programa exibe um menu com opções: Soma, Subtração, Multiplicação, Divisão, Sair.</p>
+					<p>Usuário escolhe uma operação, insere dois números, e vê o resultado.</p>
+					<p>Cada operação deve ser uma função diferente no seu código.</p>
+					<p>Quando sair, mostra "Até a próxima".</p>
+				</div>
+				<div class="instruction_tab">
+					<p>Caso queira, você pode clicar no botão ao lado para ver a instrução completa</p>
+					<br>
+					<button onclick="dayseven_instructions_run()">Ver Instrução</button>
+				</div>
+			</section>
+			<section class="solution_sec">
+				<div class="title_tab">
+					<h1>Solução</h1>
+				</div>
+				<div class="solution_tab">
+					<p>Exemplo com as 4 operações básicas:</p>
+					<br>
+					<button onclick="dayseven_solving_run()">Executar Exemplo</button>
+					<div id="dayseven_solving_result"></div>
+					<br>
+					<p>Estrutura do código:</p>
+					<pre><code>// Funções de operação
+function somar(a, b) { return a + b; }
+function subtrair(a, b) { return a - b; }
+function multiplicar(a, b) { return a * b; }
+function dividir(a, b) { 
+    if (b === 0) return "Erro: Divisão por zero!";
+    return a / b; 
+}
+
+// Menu principal
+function mostrarMenu() {
+    let operacao = prompt("Escolha: +, -, ×, ÷ ou Sair");
+    
+    if (operacao === "Sair") {
+        alert("Até a próxima!");
+        return;
+    }
+    
+    let num1 = parseFloat(prompt("Primeiro número:"));
+    let num2 = parseFloat(prompt("Segundo número:"));
+    
+    let resultado;
+    if (operacao === "+") resultado = somar(num1, num2);
+    else if (operacao === "-") resultado = subtrair(num1, num2);
+    else if (operacao === "×") resultado = multiplicar(num1, num2);
+    else if (operacao === "÷") resultado = dividir(num1, num2);
+    
+    alert(resultado);
+    mostrarMenu(); // Volta ao menu
+}</code></pre>
+				</div>
+			</section>
+			<section class="user_interation_sec">
+				<div class="user_input_tab">
+					<h3>Teste você também!</h3>
+					<p>Clique para começar a usar a calculadora:</p>
+					<br>
+					<button onclick="dayseven_reset()">Iniciar Calculadora</button>
+				</div>
+				<div class="user_experience_result_tab">
+					<div id="dayseven_result"></div>
+				</div>
+			</section>
+		</section>
+	</main>
+	<script src="ui_behaviors.js"></script>
+</body>
+
+</html>
